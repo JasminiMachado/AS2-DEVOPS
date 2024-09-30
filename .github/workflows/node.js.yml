@@ -13,17 +13,16 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Setup Node.js
-      uses: actions/setup-node@v2
+      uses: actions/setup-node@v3 # Atualize para v3
       with:
-        node-version: '14' 
+        node-version: '20' # Altere para a versão mais recente do Node.js
     - run: npm install
     - run: npm test
 
-    - name: Send message to Telegram # testando o envio de mensagem         
+    - name: Send message to Telegram # Testando o envio de mensagem         
       env:
         TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
         TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
       run: |
-        echo "Bot Token: $TELEGRAM_BOT_TOKEN"
-        echo "Chat ID: $TELEGRAM_CHAT_ID"
-        curl -X POST "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage" -d "chat_id=$TELEGRAM_CHAT_ID&text=Testes executados com sucesso!"
+        echo "Envio de mensagem para o Telegram..."
+        curl -X POST "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage" -d "chat_id=$TELEGRAM_CHAT_ID&text=Testes executados com sucesso!" 
