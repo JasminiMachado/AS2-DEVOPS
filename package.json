@@ -1,0 +1,15 @@
+{
+  "name": "as2-devops",
+  "version": "1.0.0",
+  "description": "- AS2 da disciplina de DevOps do curso de Tecnologia em Análise e Desenvolvimento de Sistemas da PUCPR.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
