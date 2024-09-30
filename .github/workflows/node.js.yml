@@ -18,3 +18,10 @@ jobs:
         node-version: '14' 
     - run: npm install
     - run: npm test
+
+    - name: Send email with test results
+      env:
+        EMAIL_USERNAME: ${{ secrets.EMAIL_USERNAME }}
+        EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
+      run: |
+        echo "Testes executados com sucesso!" | mail -s "Resultados dos Testes" $EMAIL_USERNAME
