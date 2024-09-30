@@ -19,7 +19,7 @@ jobs:
     - run: npm install
     - run: npm test
 
-    - name: Send message to Telegram #testando o envio de mensagem 
+    - name: Send message to Telegram #testando o envio de mensagem         
       env:
         TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
         TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
