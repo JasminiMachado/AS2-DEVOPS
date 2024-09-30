@@ -24,4 +24,4 @@ jobs:
         EMAIL_USERNAME: ${{ secrets.EMAIL_USERNAME }}
         EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
       run: |
-        echo "Testes executados com sucesso!" | mail -s "Resultados dos Testes" $EMAIL_USERNAME
+        echo "Testes executados com sucesso!" | sendmail -f "$EMAIL_USERNAME" "$EMAIL_USERNAME"
